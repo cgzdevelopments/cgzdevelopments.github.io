@@ -9,7 +9,6 @@ export default function ThemeToggle() {
   return (
     <IconButton
       onClick={toggleTheme}
-      sx={{ position: 'fixed', top: 16, right: 16, zIndex: 9999 }}
       color="inherit"
       aria-label={`Switch to ${mode === 'light' ? 'dark' : 'light'} mode`}
     >
