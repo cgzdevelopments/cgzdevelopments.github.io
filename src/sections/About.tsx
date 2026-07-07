@@ -1,8 +1,19 @@
-import { Box, Typography, Container, Chip, Stack } from '@mui/material'
+import { Box, Typography, Container, Stack } from '@mui/material'
+import { useTranslation } from 'react-i18next'
+import { SiVuedotjs, SiReact, SiLaravel, SiFlutter, SiMysql, SiPostgresql } from 'react-icons/si'
 
-const skills = ['VueJS', 'React', 'Laravel', 'Flutter', 'MySQL', 'PostgreSQL']
+const skills = [
+  { name: 'VueJS', icon: SiVuedotjs },
+  { name: 'React', icon: SiReact },
+  { name: 'Laravel', icon: SiLaravel },
+  { name: 'Flutter', icon: SiFlutter },
+  { name: 'MySQL', icon: SiMysql },
+  { name: 'PostgreSQL', icon: SiPostgresql },
+]
 
 export default function About() {
+  const { t } = useTranslation()
+
   return (
     <Box
       id="about"
@@ -13,18 +24,27 @@ export default function About() {
     >
       <Container maxWidth="md">
         <Typography variant="h3" sx={{ fontWeight: 700, mb: 4, textAlign: 'center' }}>
-          About Me
+          {t('about.title')}
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ mb: 4, lineHeight: 1.8 }}>
-          Software developer with over 10 years of experience building services, web applications,
-          and mobile apps. I specialize in VueJS, React, Laravel, and Flutter, with strong database
-          skills in MySQL and PostgreSQL. I'm constantly exploring new technologies and best
-          practices, focused on delivering innovative solutions with high quality and security
-          standards.
+          {t('about.body')}
         </Typography>
-        <Stack direction="row" useFlexGap spacing={1} sx={{ flexWrap: 'wrap', justifyContent: 'center' }}>
-          {skills.map((skill) => (
-            <Chip key={skill} label={skill} variant="outlined" />
+        <Stack direction="row" useFlexGap spacing={3} sx={{ flexWrap: 'wrap', justifyContent: 'center' }}>
+          {skills.map(({ name, icon: Icon }) => (
+            <Box
+              key={name}
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: 0.5,
+              }}
+            >
+              <Icon size={32} />
+              <Typography variant="caption" color="text.secondary">
+                {name}
+              </Typography>
+            </Box>
           ))}
         </Stack>
       </Container>

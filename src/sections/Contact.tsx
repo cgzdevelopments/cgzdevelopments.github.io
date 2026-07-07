@@ -1,8 +1,11 @@
 import { Box, Typography, Container, Stack, Link } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 
 export default function Contact() {
+  const { t } = useTranslation()
+
   return (
     <Box
       id="contact"
@@ -13,10 +16,10 @@ export default function Contact() {
     >
       <Container maxWidth="md" sx={{ textAlign: 'center' }}>
         <Typography variant="h3" sx={{ fontWeight: 700, mb: 3 }}>
-          Contact
+          {t('contact.title')}
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
-          Let&apos;s work together. Reach out via LinkedIn or check my code on GitHub.
+          {t('contact.body')}
         </Typography>
         <Stack direction="row" spacing={2} sx={{ justifyContent: 'center' }}>
           <Link

@@ -1,0 +1,30 @@
+{
+  "nav.home": "Inicio",
+  "nav.about": "Sobre Mí",
+  "nav.services": "Servicios",
+  "nav.contact": "Contacto",
+  "nav.menu": "Menú",
+  "nav.theme_light": "Cambiar a modo claro",
+  "nav.theme_dark": "Cambiar a modo oscuro",
+  "nav.lang": "Cambiar a Inglés",
+
+  "hero.title": "cgzdevelopments",
+  "hero.tagline": "La calidad no es un acto, es un hábito.",
+  "hero.author": "Aristóteles",
+
+  "about.title": "Sobre Mí",
+  "about.body": "Desarrollador de Software Senior con más de 10 años de experiencia creando servicios, aplicaciones web y aplicaciones móviles. Me especializo en VueJS, React, Laravel y Flutter, con sólidos conocimientos en bases de datos MySQL y PostgreSQL. Constantemente exploro nuevas tecnologías y mejores prácticas, enfocado en ofrecer soluciones innovadoras con altos estándares de calidad y seguridad.",
+
+  "services.title": "Servicios",
+  "services.web_title": "Desarrollo Web",
+  "services.web_desc": "Aplicaciones web full-stack con React, VueJS y Laravel, con interfaces modernas y responsivas.",
+  "services.mobile_title": "Desarrollo Móvil",
+  "services.mobile_desc": "Aplicaciones móviles multiplataforma con Flutter para iOS y Android desde un solo código base.",
+  "services.app_title": "Desarrollo de Aplicaciones",
+  "services.app_desc": "Desarrollo de software personalizado de principio a fin, adaptado a las necesidades de tu negocio.",
+  "services.testing_title": "Pruebas de Software",
+  "services.testing_desc": "Estrategias integrales de pruebas para garantizar calidad, confiabilidad y rendimiento.",
+
+  "contact.title": "Contacto",
+  "contact.body": "Trabajemos juntos. Contáctame por LinkedIn o revisa mi código en GitHub."
+}

@@ -1,0 +1,30 @@
+{
+  "nav.home": "Home",
+  "nav.about": "About",
+  "nav.services": "Services",
+  "nav.contact": "Contact",
+  "nav.menu": "Menu",
+  "nav.theme_light": "Switch to light mode",
+  "nav.theme_dark": "Switch to dark mode",
+  "nav.lang": "Switch to Spanish",
+
+  "hero.title": "cgzdevelopments",
+  "hero.tagline": "Quality is not an act, it is a habit.",
+  "hero.author": "Aristotle",
+
+  "about.title": "About Me",
+  "about.body": "Senior Software Developer with over 10 years of experience building services, web applications, and mobile apps. I specialize in VueJS, React, Laravel, and Flutter, with strong database skills in MySQL and PostgreSQL. I'm constantly exploring new technologies and best practices, focused on delivering innovative solutions with high quality and security standards.",
+
+  "services.title": "Services",
+  "services.web_title": "Web Development",
+  "services.web_desc": "Full-stack web applications using React, VueJS, and Laravel with responsive, modern UIs.",
+  "services.mobile_title": "Mobile Development",
+  "services.mobile_desc": "Cross-platform mobile apps built with Flutter for iOS and Android from a single codebase.",
+  "services.app_title": "Application Development",
+  "services.app_desc": "End-to-end custom software development tailored to your business needs and workflows.",
+  "services.testing_title": "Software Testing",
+  "services.testing_desc": "Comprehensive testing strategies to ensure quality, reliability, and performance.",
+
+  "contact.title": "Contact",
+  "contact.body": "Let's work together. Reach out via LinkedIn or check my code on GitHub."
+}
