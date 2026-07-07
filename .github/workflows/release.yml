@@ -37,9 +37,25 @@ jobs:
 
       - uses: actions/deploy-pages@v4
 
+      - name: Determine version bump
+        id: bump
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR=$(gh pr list --search "${{ github.sha }}" --state merged --json body,title -q '.[0] // {}')
+          BODY=$(echo "$PR" | jq -r '[.title // "", .body // ""] | join(" ")')
+          if echo "$BODY" | grep -q '#major'; then
+            echo "level=major" >> $GITHUB_OUTPUT
+          elif echo "$BODY" | grep -q '#minor'; then
+            echo "level=minor" >> $GITHUB_OUTPUT
+          else
+            echo "level=patch" >> $GITHUB_OUTPUT
+          fi
+
       - name: Bump version and tag
         uses: anothrNick/github-tag-action@1.71.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
-          DEFAULT_BUMP: patch
+          RELEASE_BRANCHES: main
+          DEFAULT_BUMP: ${{ steps.bump.outputs.level }}
