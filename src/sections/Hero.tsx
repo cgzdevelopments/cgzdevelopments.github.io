@@ -18,7 +18,7 @@ export default function Hero() {
     >
       <ParticleBackground />
       <Container maxWidth="sm" sx={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
-        <Typography variant="h3" sx={{ fontWeight: 600, mb: 3 }}>
+        <Typography variant="h2" sx={{ fontWeight: 600, mb: 3 }}>
           {t('hero.title')}
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ fontStyle: 'italic', fontWeight: 300, lineHeight: 1.6, mb: 1 }}>
