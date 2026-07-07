@@ -6,16 +6,25 @@
 npm run dev        # Vite dev server with HMR
 npm run build      # tsc -b && vite build (typecheck + bundle)
 npm run lint       # ESLint on all .ts/.tsx
-npm run deploy     # build + gh-pages to gh-pages branch
+npm run preview    # Serve built docs/ locally
 ```
 
 `build` always runs `tsc -b` first — fix type errors before debugging bundle issues.
 
-## Deploy
+## CI / CD
 
+- PRs to `main` trigger the **Quality** workflow (`.github/workflows/quality.yml`) — lint + build.
+- Merges to `main` trigger the **Release** workflow (`.github/workflows/release.yml`) — builds and deploys to GitHub Pages via `actions/deploy-pages`.
 - Published at https://cgzdevelopments.github.io
 - Base path is `/` (see `vite.config.ts`).
-- Deploy via `npm run deploy` (pushes `dist/` to `gh-pages` branch).
+
+## Docker
+
+```bash
+docker compose up --build   # Build and serve on http://localhost:8080
+```
+
+Multi-stage build: Node 22 (build) → Nginx (serve). Config at `docker/`.
 
 ## Entry points
 
