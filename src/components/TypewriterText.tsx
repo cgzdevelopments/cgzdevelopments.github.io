@@ -38,7 +38,7 @@ export default function TypewriterText({
           setDisplayText(text.substring(0, displayText.length - 1))
         }, deleteSpeed)
       } else {
-        setIsDeleting(false)
+        timeout = setTimeout(() => setIsDeleting(false), 0)
       }
     } else {
       if (displayText.length < text.length) {
@@ -46,7 +46,7 @@ export default function TypewriterText({
           setDisplayText(text.substring(0, displayText.length + 1))
         }, speed)
       } else if (loop) {
-        setIsPaused(true)
+        timeout = setTimeout(() => setIsPaused(true), 0)
       }
     }
 
