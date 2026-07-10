@@ -1,6 +1,8 @@
-import { Box, Typography, Container } from '@mui/material'
+import { Box, Container } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import ParticleBackground from '../components/ParticleBackground'
+import ParticleText from '../components/ParticleText'
+import TypewriterText from '../components/TypewriterText'
 
 export default function Hero() {
   const { t } = useTranslation()
@@ -9,7 +11,7 @@ export default function Hero() {
     <Box
       id="home"
       sx={{
-        minHeight: '100svh',
+        minHeight: '50svh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -18,15 +20,20 @@ export default function Hero() {
     >
       <ParticleBackground />
       <Container maxWidth="sm" sx={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
-        <Typography variant="h2" sx={{ fontWeight: 600, mb: 3 }}>
-          {t('hero.title')}
-        </Typography>
-        <Typography variant="body1" color="text.secondary" sx={{ fontStyle: 'italic', fontWeight: 300, lineHeight: 1.6, mb: 1 }}>
-          &ldquo;{t('hero.tagline')}&rdquo;
-        </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 300 }}>
-          &mdash; {t('hero.author')}
-        </Typography>
+        <Box sx={{ mb: 3, '& > div': { display: 'block !important' } }}>
+          <ParticleText
+            text={t('hero.title')}
+            textSize={64}
+            particleSize={4}
+          />
+        </Box>
+        <TypewriterText
+          text={`\u201C${t('hero.tagline')}\u201D \u2014 ${t('hero.author')}`}
+          speed={80}
+          deleteSpeed={40}
+          pauseDuration={3000}
+          loop={false}
+        />
       </Container>
     </Box>
   )

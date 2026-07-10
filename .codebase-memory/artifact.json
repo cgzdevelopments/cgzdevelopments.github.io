@@ -1,11 +1,11 @@
 {
     "schema_version": 1,
-    "commit": "",
-    "indexed_at": "2026-07-07T04:22:33Z",
+    "commit": "a5ff6d268ff2d9f3913fa99ee505925e5cf34f11",
+    "indexed_at": "2026-07-10T02:38:07Z",
     "project": "home-cgarcia-Proyectos-cgzdevelopments-portfolio",
-    "nodes": 59,
-    "edges": 64,
-    "original_size": 1179648,
-    "compressed_size": 7018,
-    "compression_level": 9
+    "nodes": 223,
+    "edges": 266,
+    "original_size": 2162688,
+    "compressed_size": 148436,
+    "compression_level": 3
 }
