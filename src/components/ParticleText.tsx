@@ -8,9 +8,10 @@ interface ParticleTextProps {
   particleSize?: number
   particleColor?: string
   textColor?: string
+  splitAt?: number
 }
 
-export default function ParticleText({ text = 'PARTICLES', textSize = 56, particleSize, particleColor: pc, textColor: tc }: ParticleTextProps) {
+export default function ParticleText({ text = 'PARTICLES', textSize = 56, particleSize, particleColor: pc, textColor: tc, splitAt }: ParticleTextProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const theme = useTheme()
   const particleColor = pc ?? (theme.palette.mode === 'dark' ? '#888' : '#999')
@@ -73,25 +74,46 @@ export default function ParticleText({ text = 'PARTICLES', textSize = 56, partic
   return (
     <Box
       ref={containerRef}
-      sx={{
-        position: 'relative',
-        display: 'inline-block',
-      }}
+        sx={{
+          position: 'relative',
+          display: 'inline-block',
+          overflow: 'hidden',
+          fontWeight: 'bold',
+          fontSize: {
+            xs: '3rem',
+            sm: '3rem',
+            md: `${textSize}px`,
+          },
+        }}
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: 'easeOut' }}
-        style={{
-          position: 'relative',
-          zIndex: 10,
-          color: textColor,
-          fontSize: textSize,
-          textShadow: `0 0 20px ${particleColor}40`,
-          filter: `drop-shadow(0 0 10px ${particleColor}60)`,
-        }}
+          style={{
+            position: 'relative',
+            zIndex: 10,
+            color: textColor,
+            textShadow: `0 0 20px ${particleColor}40`,
+            filter: `drop-shadow(0 0 10px ${particleColor}60)`,
+          }}
       >
-        {text}
+        {splitAt != null ? (
+          <Box
+            component="span"
+            sx={{
+              display: 'inline',
+              '& > span': {
+                display: { xs: 'block', sm: 'inline' },
+              },
+            }}
+          >
+            <Box component="span">{text.slice(0, splitAt)}</Box>
+            <Box component="span">{text.slice(splitAt)}</Box>
+          </Box>
+        ) : (
+          text
+        )}
       </motion.div>
     </Box>
   )

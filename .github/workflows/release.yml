@@ -53,9 +53,18 @@ jobs:
           fi
 
       - name: Bump version and tag
+        id: tagg
         uses: anothrNick/github-tag-action@1.71.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
           RELEASE_BRANCHES: main
           DEFAULT_BUMP: ${{ steps.bump.outputs.level }}
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${{ steps.tagg.outputs.tag }}" \
+            --generate-notes \
+            --verify-tag
