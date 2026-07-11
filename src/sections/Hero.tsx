@@ -11,7 +11,7 @@ export default function Hero() {
     <Box
       id="home"
       sx={{
-        minHeight: '50svh',
+        minHeight: '75svh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -25,6 +25,7 @@ export default function Hero() {
             text={t('hero.title')}
             textSize={64}
             particleSize={4}
+            splitAt={3}
           />
         </Box>
         <TypewriterText
